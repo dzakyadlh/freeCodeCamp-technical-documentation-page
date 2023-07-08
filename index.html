@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Bootstrap Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <button id="nav-toggle" onclick="navToggle()">&#8801;</button>
+      <header id="nav-header">
+        <h1>React Bootstrap Documentation</h1>
+      </header>
+      <ul id="nav-links">
+        <li><a class="nav-link" href="#introduction">Introduction</a></li>
+        <li><a class="nav-link" href="#installation">Installation</a></li>
+        <li>
+          <a class="nav-link" href="#importing_components"
+            >Importing Components</a
+          >
+        </li>
+        <li><a class="nav-link" href="#examples">Examples</a></li>
+        <li><a class="nav-link" href="#stylesheets">Stylesheets</a></li>
+        <li><a class="nav-link" href="#themes">Themes</a></li>
+        <li><a class="nav-link" href="#browser_support">Browser Support</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section id="introduction" class="main-section">
+        <header class="main-header">
+          <h2>Introduction</h2>
+        </header>
+        <p>
+          React-Bootstrap is a complete re-implementation of the Bootstrap
+          components using React. It has no dependency on either bootstrap.js or
+          jQuery. If you have React setup and React-Bootstrap installed, you
+          have everything you need.
+        </p>
+        <p>
+          Methods and events using jQuery is done imperatively by directly
+          manipulating the DOM. In contrast, React uses updates to the state to
+          update the virtual DOM. In this way, React-Bootstrap provides a more
+          reliable solution by incorporating Bootstrap functionality into
+          React's virtual DOM. Below are a few examples of how React-Bootstrap
+          components differ from Bootstrap.
+        </p>
+        <p>Advantages of Bootstrap Framework:</p>
+        <ul>
+          <li>
+            Responsive Design: Bootstrap provides a responsive grid system and a
+            collection of pre-built components that automatically adapt to
+            different screen sizes. This allows developers to create
+            mobile-friendly websites and applications easily.
+          </li>
+          <li>
+            Time-Saving: With ready-to-use components and templates, Bootstrap
+            helps accelerate the development process. Developers can quickly
+            create responsive layouts, navigation bars, forms, buttons, and
+            more, without starting from scratch.
+          </li>
+          <li>
+            Community and Documentation: Bootstrap has a large and active
+            community of developers, which means there is extensive
+            documentation, tutorials, and resources available. Developers can
+            easily find answers to their questions or seek help from the
+            community when needed.
+          </li>
+          <li>
+            Customization: Bootstrap offers a range of customization options,
+            allowing developers to tailor the framework to their specific needs.
+            They can customize the color scheme, layout, and components to match
+            the branding and design requirements of their projects.
+          </li>
+          <li>
+            Cross-Browser Compatibility: Bootstrap is designed to be compatible
+            with modern web browsers, ensuring consistent rendering and
+            functionality across different platforms and devices.
+          </li>
+        </ul>
+      </section>
+      <section id="installation" class="main-section">
+        <header class="main-header">
+          <h2>Installation</h2>
+        </header>
+        <p>
+          The best way to consume React-Bootstrap is via the npm package which
+          you can install with npm (or yarn if you prefer).
+        </p>
+        <p>
+          If you plan on customizing the Bootstrap Sass files, or don't want to
+          use a CDN for the stylesheet, it may be helpful to install vanilla
+          Bootstrap as well.
+        </p>
+        <pre><code>npm install react-bootstrap bootstrap</code></pre>
+      </section>
+      <section id="importing_components" class="main-section">
+        <header class="main-header">
+          <h2>Importing Components</h2>
+        </header>
+        <p>
+          You should import individual components like: react-bootstrap/Button
+          rather than the entire library. Doing so pulls in only the specific
+          components that you use, which can significantly reduce the amount of
+          code you end up sending to the client.
+        </p>
+        <pre><code>import { Button } from 'react-bootstrap';</code></pre>
+      </section>
+      <section id="examples" class="main-section">
+        <header class="main-header">
+          <h2>Examples</h2>
+        </header>
+        <p>
+          React-Bootstrap has started a repo with a few basic CodeSandbox
+          examples. <a href="#">Click here</a> to check them out.
+        </p>
+      </section>
+      <section id="stylesheets" class="main-section">
+        <header class="main-header">
+          <h2>Stylesheets</h2>
+        </header>
+        <p>
+          Because React-Bootstrap doesn't depend on a very precise version of
+          Bootstrap, we don't ship with any included CSS. However, some
+          stylesheet is required to use these components.
+        </p>
+        <h3>CSS</h3>
+        <pre><code>{<br>/* The following line can be included in your src/index.js or App.js file */<br>}<br>import 'bootstrap/dist/css/bootstrap.min.css';</code></pre>
+        <p>
+          How and which Bootstrap styles you include is up to you, but the
+          simplest way is to include the latest styles from the CDN. A little
+          more information about the benefits of using a CDN can be found
+          <a href="#">here</a>.
+        </p>
+        <pre><code><<span>link</span><br>rel="stylesheet"<br>href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"<br>integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"<br>crossorigin="anonymous"<br>/></code></pre>
+        <h3>SASS</h3>
+        <p>
+          In case you are using Sass the simplest way is to include the
+          Bootstrap’s source Sass files in your main Sass file and then require
+          it on your src/index.js or App.js file. This applies to a typical
+          create-react-app application in other use cases you might have to
+          setup the bundler of your choice to compile Sass/SCSS stylesheets to
+          CSS.
+        </p>
+        <pre><code>/* The following line can be included in a src/App.scss */<br>@import '~bootstrap/scss/bootstrap';</code></pre>
+        <pre><code>/* The following line can be included in your src/index.js or App.js file */<br>import './App.scss';</code></pre>
+      </section>
+      <section id="themes" class="main-section">
+        <header class="main-header">
+          <h2>Themes</h2>
+        </header>
+        <p>
+          React-Bootstrap is compatible with existing Bootstrap themes. Just
+          follow the installation instructions for your theme of choice.
+        </p>
+      </section>
+      <section id="browser_support" class="main-section">
+        <header class="main-header">
+          <h2>Browser Support</h2>
+        </header>
+        <p>
+          We aim to support all browsers supported by both React and Bootstrap.
+        </p>
+      </section>
+    </main>
+    <script>
+      const navToggle = () => {
+        const navLinks = document.getElementById("nav-links");
+        if (navLinks.style.display === "block") {
+          navLinks.style.display = "none";
+        } else {
+          navLinks.style.display = "block";
+        }
+      };
+    </script>
+  </body>
+</html>
